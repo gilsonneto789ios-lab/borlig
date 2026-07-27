@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
+import { SiteHeader } from '../../components/site-header/site-header';
 
 interface NetworkPoint {
   x: number;
@@ -15,7 +15,7 @@ interface NetworkPoint {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonModule, RouterLink],
+  imports: [ButtonModule, SiteHeader],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

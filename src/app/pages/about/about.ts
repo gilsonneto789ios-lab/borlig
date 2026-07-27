@@ -1,17 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { SiteHeader } from '../../components/site-header/site-header';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [RouterLink],
+  imports: [SiteHeader],
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })
-export class About {
-  menuAberto = false;
-
-  alternarMenu(): void {
-    this.menuAberto = !this.menuAberto;
-  }
-}
+export class About {}

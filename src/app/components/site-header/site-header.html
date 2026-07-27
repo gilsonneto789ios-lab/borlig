@@ -1,0 +1,72 @@
+<header class="header">
+  <div class="header__inner">
+    <a class="brand" routerLink="/" aria-label="Borlig - Página inicial">
+      <span class="brand__mark"><span></span></span>
+      <span><strong>Bor</strong>lig</span>
+    </a>
+
+    <button class="menu-button" type="button" aria-label="Abrir menu"
+      [attr.aria-expanded]="menuAberto" (click)="alternarMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" [class.nav--open]="menuAberto" aria-label="Navegação principal">
+      <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">Início</a>
+
+      <div class="services-menu" [class.services-menu--open]="servicosAbertos">
+        <button class="services-trigger" type="button" (click)="alternarServicos()"
+          [attr.aria-expanded]="servicosAbertos">
+          Serviços <i class="pi pi-angle-down"></i>
+        </button>
+
+        <div class="mega-menu">
+          <div class="mega-menu__categories">
+            <button type="button" [class.active]="categoriaAtiva === 'software'"
+              (mouseenter)="selecionarCategoria('software')" (focus)="selecionarCategoria('software')"
+              (click)="selecionarCategoria('software')">
+              <i class="pi pi-code"></i><span>Engenharia de<br>Software</span><b>›</b>
+            </button>
+            <button type="button" [class.active]="categoriaAtiva === 'cloud'"
+              (mouseenter)="selecionarCategoria('cloud')" (focus)="selecionarCategoria('cloud')"
+              (click)="selecionarCategoria('cloud')">
+              <i class="pi pi-cloud"></i><span>Cloud, Dados & IA</span><b>›</b>
+            </button>
+            <button type="button" [class.active]="categoriaAtiva === 'security'"
+              (mouseenter)="selecionarCategoria('security')" (focus)="selecionarCategoria('security')"
+              (click)="selecionarCategoria('security')">
+              <i class="pi pi-shield"></i><span>Segurança &<br>Operação</span><b>›</b>
+            </button>
+          </div>
+
+          <div class="mega-menu__options">
+            @if (categoriaAtiva === 'software') {
+              <a routerLink="/" fragment="servicos"><strong>Desenvolvimento de software</strong><small>Web, mobile e desktop</small></a>
+              <a routerLink="/" fragment="servicos"><strong>Outsourcing / Squads</strong><small>Squads e alocação de especialistas</small></a>
+              <a routerLink="/" fragment="servicos"><strong>QA</strong><small>Testes manuais e automatizados</small></a>
+              <a routerLink="/" fragment="servicos"><strong>Design UI/UX</strong><small>Interfaces e experiência digital</small></a>
+              <a routerLink="/" fragment="servicos"><strong>IoT & Automação</strong><small>Firmware, drivers e IoT</small></a>
+            }
+            @if (categoriaAtiva === 'cloud') {
+              <a routerLink="/" fragment="servicos"><strong>DevOps / SRE / Cloud</strong><small>CI/CD, cloud e SRE</small></a>
+              <a routerLink="/" fragment="servicos"><strong>Inteligência artificial</strong><small>IA, machine learning e BI</small></a>
+              <a routerLink="/" fragment="servicos"><strong>FinOps & Migrações</strong><small>FinOps e migrações para nuvem</small></a>
+            }
+            @if (categoriaAtiva === 'security') {
+              <a routerLink="/" fragment="servicos"><strong>Segurança de dados</strong><small>Pentest e segurança de dados</small></a>
+              <a routerLink="/" fragment="servicos"><strong>NOC & SOC</strong><small>Operação e segurança 24/7</small></a>
+            }
+          </div>
+        </div>
+      </div>
+
+      <a routerLink="/" fragment="produtos">Produtos <i class="pi pi-angle-down"></i></a>
+      <a routerLink="/sobre" routerLinkActive="active">Sobre</a>
+      <a routerLink="/contato" routerLinkActive="active">Contato</a>
+      <span class="language">🇧🇷 PT</span>
+    </nav>
+
+    <a class="whatsapp" href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer">
+      <i class="pi pi-whatsapp"></i> WhatsApp
+    </a>
+  </div>
+</header>
