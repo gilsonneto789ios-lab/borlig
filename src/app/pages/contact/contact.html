@@ -1,0 +1,110 @@
+<div class="page-shell">
+  <header class="header">
+    <div class="header__inner">
+      <a class="brand" routerLink="/" aria-label="Borlig - Página inicial">
+        <span class="brand__mark"><span></span></span>
+        <span><strong>Bor</strong>lig</span>
+      </a>
+
+      <button class="menu-button" type="button" aria-label="Abrir menu"
+        [attr.aria-expanded]="menuAberto" (click)="alternarMenu()">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" [class.nav--open]="menuAberto" aria-label="Navegação principal">
+        <a routerLink="/">Início</a>
+        <a routerLink="/" fragment="servicos">Serviços <i class="pi pi-angle-down"></i></a>
+        <a routerLink="/" fragment="produtos">Produtos <i class="pi pi-angle-down"></i></a>
+        <a routerLink="/" fragment="sobre">Sobre</a>
+        <a class="active" routerLink="/contato">Contato</a>
+        <span class="language">🇧🇷 PT</span>
+      </nav>
+
+      <a class="whatsapp" href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer">
+        <i class="pi pi-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero">
+      <span class="contact-hero__eyebrow">Vamos conversar</span>
+      <h1>Contato</h1>
+      <p>Entre em contato</p>
+    </section>
+
+    <section class="contact-content">
+      <aside class="contact-card">
+        <div>
+          <span class="contact-card__label">FALE COM A BORLIG</span>
+          <h2>Entre em contato</h2>
+          <p class="contact-card__intro">
+            Conte um pouco sobre o seu projeto. Nossa equipe está pronta para transformar sua ideia em realidade.
+          </p>
+
+          <ul>
+            <li>
+              <i class="pi pi-map-marker"></i>
+              <span>São Paulo - SP<br>Atendimento em todo o Brasil</span>
+            </li>
+            <li>
+              <i class="pi pi-phone"></i>
+              <a href="tel:+5500000000000">(00) 00000-0000</a>
+            </li>
+            <li>
+              <i class="pi pi-envelope"></i>
+              <a href="mailto:contato@borlig.com.br">contato&#64;borlig.com.br</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-card__footer">
+          <span>Tecnologia</span><i></i><span>Design</span><i></i><span>Estratégia</span>
+        </div>
+      </aside>
+
+      <form class="contact-form" (submit)="$event.preventDefault(); enviarFormulario()">
+        <div class="form-heading">
+          <span>CONTE SOBRE O SEU PROJETO</span>
+          <h2>Como podemos ajudar?</h2>
+        </div>
+
+        <label>
+          <span>Empresa</span>
+          <input type="text" name="empresa" placeholder="Nome da sua empresa">
+        </label>
+
+        <div class="form-row">
+          <label>
+            <span>Nome *</span>
+            <input type="text" name="nome" placeholder="Seu nome" required>
+          </label>
+          <label>
+            <span>Email *</span>
+            <input type="email" name="email" placeholder="voce@empresa.com" required>
+          </label>
+        </div>
+
+        <label>
+          <span>Telefone *</span>
+          <input type="tel" name="telefone" placeholder="(00) 00000-0000" required>
+        </label>
+
+        <label>
+          <span>Mensagem</span>
+          <textarea name="mensagem" rows="5" placeholder="Fale um pouco sobre sua ideia, desafio ou projeto..."></textarea>
+        </label>
+
+        <button type="submit">
+          Enviar mensagem <i class="pi pi-send"></i>
+        </button>
+
+        @if (mensagemEnviada) {
+          <p class="success-message" role="status">
+            <i class="pi pi-check-circle"></i> Mensagem recebida! Em breve entraremos em contato.
+          </p>
+        }
+      </form>
+    </section>
+  </main>
+</div>

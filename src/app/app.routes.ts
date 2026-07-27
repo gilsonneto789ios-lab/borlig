@@ -9,6 +9,12 @@ export const routes: Routes = [
     title: 'Borlig',
   },
   {
+    path: 'contato',
+    loadComponent: () =>
+      import('./pages/contact/contact').then((component) => component.Contact),
+    title: 'Contato | Borlig',
+  },
+  {
     path: 'inicio',
     redirectTo: '',
     pathMatch: 'full',
