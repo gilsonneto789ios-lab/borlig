@@ -2,6 +2,7 @@ import { Component, DestroyRef, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SiteHeader } from '../../components/site-header/site-header';
+import { TranslatePage } from '../../directives/translate-page';
 
 interface ServiceContent {
   title: string;
@@ -206,7 +207,7 @@ const SERVICES: Record<string, ServiceContent> = {
 @Component({
   selector: 'app-service-detail',
   standalone: true,
-  imports: [SiteHeader, RouterLink],
+  imports: [SiteHeader, RouterLink, TranslatePage],
   templateUrl: './service-detail.html',
   styleUrl: './service-detail.scss',
 })

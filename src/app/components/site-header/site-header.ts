@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { LanguageService } from '../../services/language';
 
 type ServiceCategory = 'software' | 'cloud' | 'security';
 
@@ -11,6 +12,7 @@ type ServiceCategory = 'software' | 'cloud' | 'security';
   styleUrl: './site-header.scss',
 })
 export class SiteHeader {
+  readonly language = inject(LanguageService);
   menuAberto = false;
   servicosAbertos = false;
   categoriaAtiva: ServiceCategory = 'software';
