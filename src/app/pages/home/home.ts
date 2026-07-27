@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { SiteHeader } from '../../components/site-header/site-header';
 
@@ -15,7 +16,7 @@ interface NetworkPoint {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonModule, SiteHeader],
+  imports: [ButtonModule, RouterLink, SiteHeader],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -157,7 +158,4 @@ export class Home implements AfterViewInit, OnDestroy {
     this.cookiesVisiveis = false;
   }
 
-  hello(){
-    console.log("Ola Mundo")
-  }
 }
