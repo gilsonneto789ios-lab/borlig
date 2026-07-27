@@ -1,0 +1,107 @@
+<div class="page-shell">
+  <header class="header">
+    <div class="header__inner">
+      <a class="brand" routerLink="/" aria-label="Borlig - Página inicial">
+        <span class="brand__mark"><span></span></span>
+        <span><strong>Bor</strong>lig</span>
+      </a>
+
+      <button class="menu-button" type="button" aria-label="Abrir menu"
+        [attr.aria-expanded]="menuAberto" (click)="alternarMenu()">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" [class.nav--open]="menuAberto" aria-label="Navegação principal">
+        <a routerLink="/">Início</a>
+        <a routerLink="/" fragment="servicos">Serviços <i class="pi pi-angle-down"></i></a>
+        <a routerLink="/" fragment="produtos">Produtos <i class="pi pi-angle-down"></i></a>
+        <a class="active" routerLink="/sobre">Sobre</a>
+        <a routerLink="/contato">Contato</a>
+        <span class="language">🇧🇷 PT</span>
+      </nav>
+
+      <a class="whatsapp" href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer">
+        <i class="pi pi-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <div class="about-hero__glow"></div>
+      <div class="about-hero__content">
+        <span class="eyebrow"><i></i> Tecnologia que gera resultados</span>
+        <h1>Sobre a <em>Borlig</em></h1>
+        <p>Transformamos desafios em soluções digitais inteligentes, seguras e preparadas para crescer.</p>
+      </div>
+
+      <div class="about-hero__visual" aria-hidden="true">
+        <div class="orbit orbit--one"></div>
+        <div class="orbit orbit--two"></div>
+        <div class="visual-core">
+          <span class="brand__mark brand__mark--large"><span></span></span>
+        </div>
+        <span class="visual-dot visual-dot--one"></span>
+        <span class="visual-dot visual-dot--two"></span>
+        <span class="visual-dot visual-dot--three"></span>
+      </div>
+    </section>
+
+    <section class="about-content">
+      <div class="section-heading">
+        <span>QUEM SOMOS</span>
+        <h2>Tecnologia feita para impulsionar negócios</h2>
+      </div>
+
+      <div class="story-grid">
+        <div class="story-copy">
+          <p>
+            A <strong>Borlig</strong> é uma empresa especializada em criar soluções tecnológicas que ajudam
+            empresas a crescer, inovar e se tornar mais eficientes.
+          </p>
+          <p>
+            Desenvolvemos sistemas personalizados, aplicativos, sites e plataformas digitais, sempre focando
+            nas necessidades de cada cliente. Além disso, oferecemos suporte completo para modernizar processos,
+            automatizar tarefas, proteger informações e garantir que toda a estrutura tecnológica funcione com
+            segurança e estabilidade.
+          </p>
+          <p>
+            Nossa equipe reúne especialistas em desenvolvimento de software, inteligência artificial, computação
+            em nuvem, segurança digital, design de interfaces e qualidade de software, permitindo entregar projetos
+            completos, desde a ideia inicial até a implantação e o suporte contínuo.
+          </p>
+          <p>
+            Também disponibilizamos profissionais e equipes dedicadas para atuar diretamente nos projetos dos
+            nossos clientes, acelerando entregas e agregando conhecimento técnico sempre que necessário.
+          </p>
+          <p>
+            Na Borlig, acreditamos que a tecnologia deve ser uma ferramenta para gerar resultados reais, aumentando
+            a produtividade, reduzindo custos e criando novas oportunidades de crescimento para empresas de todos
+            os segmentos.
+          </p>
+        </div>
+
+        <aside class="expertise-card">
+          <span class="expertise-card__label">ESPECIALIDADES</span>
+          <h3>Uma equipe completa para cada desafio</h3>
+          <ul>
+            <li><i class="pi pi-code"></i><span>Desenvolvimento de software</span></li>
+            <li><i class="pi pi-sparkles"></i><span>Inteligência artificial</span></li>
+            <li><i class="pi pi-cloud"></i><span>Computação em nuvem</span></li>
+            <li><i class="pi pi-shield"></i><span>Segurança digital</span></li>
+            <li><i class="pi pi-palette"></i><span>Design de interfaces</span></li>
+            <li><i class="pi pi-check-circle"></i><span>Qualidade de software</span></li>
+          </ul>
+        </aside>
+      </div>
+
+      <blockquote>
+        <i class="pi pi-bolt"></i>
+        <p>
+          <strong>Nosso compromisso é transformar desafios em soluções inteligentes, desenvolvendo tecnologia
+          que impulsiona negócios.</strong>
+        </p>
+      </blockquote>
+    </section>
+  </main>
+</div>

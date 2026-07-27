@@ -9,6 +9,12 @@ export const routes: Routes = [
     title: 'Borlig',
   },
   {
+    path: 'sobre',
+    loadComponent: () =>
+      import('./pages/about/about').then((component) => component.About),
+    title: 'Sobre | Borlig',
+  },
+  {
     path: 'contato',
     loadComponent: () =>
       import('./pages/contact/contact').then((component) => component.Contact),
