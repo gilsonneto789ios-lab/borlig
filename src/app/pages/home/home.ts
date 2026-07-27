@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 
 interface NetworkPoint {
@@ -14,7 +15,7 @@ interface NetworkPoint {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonModule],
+  imports: [ButtonModule, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -28,7 +29,9 @@ export class Home implements AfterViewInit, OnDestroy {
   private points: NetworkPoint[] = [];
   private pointer = { x: -1000, y: -1000, active: false };
   private readonly reduceMotion =
-    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    typeof window !== 'undefined' &&
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   constructor(private readonly zone: NgZone) {}
 
@@ -50,8 +53,10 @@ export class Home implements AfterViewInit, OnDestroy {
     hero.addEventListener('pointermove', updatePointer);
     hero.addEventListener('pointerleave', resetPointer);
 
-    this.resizeObserver = new ResizeObserver(() => this.resizeCanvas(canvas));
-    this.resizeObserver.observe(hero);
+    if (typeof ResizeObserver !== 'undefined') {
+      this.resizeObserver = new ResizeObserver(() => this.resizeCanvas(canvas));
+      this.resizeObserver.observe(hero);
+    }
     this.resizeCanvas(canvas);
 
     this.zone.runOutsideAngular(() => {
