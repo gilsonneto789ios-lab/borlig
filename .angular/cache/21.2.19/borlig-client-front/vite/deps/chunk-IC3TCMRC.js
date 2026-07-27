@@ -4,23 +4,25 @@ import {
   Y,
   m,
   te
-} from "./chunk-24MDVE6H.js";
+} from "./chunk-XETGMQ3B.js";
+import {
+  Injectable,
+  PLATFORM_ID,
+  provideAppInitializer,
+  setClassMetadata,
+  ɵɵgetInheritedFactory
+} from "./chunk-JPDWXCA6.js";
 import {
   DOCUMENT,
-  Injectable,
   InjectionToken,
-  PLATFORM_ID,
   Subject,
   effect,
   inject,
   makeEnvironmentProviders,
-  provideAppInitializer,
-  setClassMetadata,
   signal,
   untracked,
-  ɵɵdefineInjectable,
-  ɵɵgetInheritedFactory
-} from "./chunk-L6H2IOLQ.js";
+  ɵɵdefineInjectable
+} from "./chunk-RBLYSPD5.js";
 import {
   __spreadValues
 } from "./chunk-75NUGXPU.js";
@@ -997,4 +999,4 @@ export {
   PRIME_NG_CONFIG,
   providePrimeNG
 };
-//# sourceMappingURL=chunk-GPRXONJ7.js.map
+//# sourceMappingURL=chunk-IC3TCMRC.js.map

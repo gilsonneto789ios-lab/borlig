@@ -1,24 +1,26 @@
 import {
   DomRendererFactory2
-} from "./chunk-3E5ACW5M.js";
-import "./chunk-V3AITABY.js";
+} from "./chunk-3B553XN2.js";
+import "./chunk-OEJGN2OH.js";
 import {
   ANIMATION_MODULE_TYPE,
+  Injectable,
+  RendererFactory2,
+  performanceMarkFeature,
+  setClassMetadata,
+  ɵɵinvalidFactory
+} from "./chunk-JPDWXCA6.js";
+import {
   ChangeDetectionScheduler,
   DOCUMENT,
-  Injectable,
   InjectionToken,
   Injector,
   NgZone,
-  RendererFactory2,
   RuntimeError,
   inject,
   makeEnvironmentProviders,
-  performanceMarkFeature,
-  setClassMetadata,
-  ɵɵdefineInjectable,
-  ɵɵinvalidFactory
-} from "./chunk-L6H2IOLQ.js";
+  ɵɵdefineInjectable
+} from "./chunk-RBLYSPD5.js";
 import "./chunk-75NUGXPU.js";
 
 // node_modules/@angular/platform-browser/fesm2022/animations-async.mjs

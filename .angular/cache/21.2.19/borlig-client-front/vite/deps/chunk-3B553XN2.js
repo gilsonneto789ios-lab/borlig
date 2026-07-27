@@ -1,25 +1,27 @@
 import {
   getDOM
-} from "./chunk-V3AITABY.js";
+} from "./chunk-OEJGN2OH.js";
 import {
   APP_ID,
   CSP_NONCE,
-  DOCUMENT,
   Inject,
   Injectable,
-  InjectionToken,
-  NgZone,
   Optional,
   PLATFORM_ID,
   RendererStyleFlags2,
-  RuntimeError,
   TracingService,
   ViewEncapsulation,
   allLeavingAnimations,
-  setClassMetadata,
+  setClassMetadata
+} from "./chunk-JPDWXCA6.js";
+import {
+  DOCUMENT,
+  InjectionToken,
+  NgZone,
+  RuntimeError,
   ɵɵdefineInjectable,
   ɵɵinject
-} from "./chunk-L6H2IOLQ.js";
+} from "./chunk-RBLYSPD5.js";
 
 // node_modules/@angular/platform-browser/fesm2022/_dom_renderer-chunk.mjs
 var EventManagerPlugin = class {
@@ -715,4 +717,4 @@ export {
   REMOVE_STYLES_ON_COMPONENT_DESTROY,
   DomRendererFactory2
 };
-//# sourceMappingURL=chunk-3E5ACW5M.js.map
+//# sourceMappingURL=chunk-3B553XN2.js.map

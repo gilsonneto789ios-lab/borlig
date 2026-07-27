@@ -1,0 +1,120 @@
+<div class="page-shell">
+  <app-site-header />
+
+  <main>
+    <section class="service-hero">
+      <div class="service-hero__content">
+        <div class="breadcrumbs">Início <i class="pi pi-angle-right"></i> Serviços <i class="pi pi-angle-right"></i> {{ service.title }}</div>
+        <h1>{{ service.title }}</h1>
+        <p>{{ service.subtitle }}</p>
+        <span>{{ service.description }}</span>
+        <div class="hero-actions">
+          <a routerLink="/contato">Começar agora <i class="pi pi-arrow-right"></i></a>
+          <a class="outline" href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer">
+            <i class="pi pi-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section highlights">
+      <div class="section-heading">
+        <span><i></i> DESTAQUES</span>
+        <h2>{{ service.title }}</h2>
+        <p>{{ service.description }}</p>
+      </div>
+      <div class="card-grid card-grid--three">
+        @for (item of service.highlights; track item.title) {
+          <article class="info-card">
+            <i class="pi {{ item.icon }}"></i>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="section section--soft process">
+      <div class="section-heading">
+        <span><i></i> PROCESSO</span>
+        <h2>Como este projeto acontece</h2>
+        <p>Processo transparente, com marcos e aprovações a cada etapa.</p>
+      </div>
+      <div class="steps">
+        <article><b>1</b><h3>Descoberta</h3><p>Entendemos objetivos, cenário e prioridades.</p></article>
+        <article><b>2</b><h3>Plano</h3><p>Definimos escopo, arquitetura e cronograma.</p></article>
+        <article><b>3</b><h3>Execução</h3><p>Construímos em ciclos curtos e mensuráveis.</p></article>
+        <article><b>4</b><h3>Validação</h3><p>Testamos e aprovamos cada entrega.</p></article>
+        <article><b>5</b><h3>Evolução</h3><p>Acompanhamos resultados e melhorias.</p></article>
+      </div>
+    </section>
+
+    <section class="section technologies">
+      <div class="section-heading">
+        <span><i></i> TECNOLOGIAS</span>
+        <h2>Tecnologias que utilizamos</h2>
+        <p>Escolhemos a stack adequada para cada cenário e objetivo.</p>
+      </div>
+      <div class="chips">
+        @for (technology of service.technologies; track technology) {
+          <span><i class="pi pi-check"></i>{{ technology }}</span>
+        }
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="section-heading">
+        <span><i></i> ENTREGÁVEIS</span>
+        <h2>O que você vai receber</h2>
+        <p>Resultados concretos, entregáveis claros e sem surpresas.</p>
+      </div>
+      <div class="deliverables">
+        @for (item of service.deliverables; track item) {
+          <div><i class="pi pi-check-circle"></i><strong>{{ item }}</strong></div>
+        }
+      </div>
+    </section>
+
+    <section class="section audience">
+      <div class="section-heading">
+        <span><i></i> PARA QUEM</span>
+        <h2>Para quem este serviço é indicado</h2>
+        <p>Soluções adaptadas ao momento e às metas da sua empresa.</p>
+      </div>
+      <div class="card-grid card-grid--three">
+        @for (item of service.audiences; track item.title) {
+          <article class="audience-card">
+            <i class="pi {{ item.icon }}"></i>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="section section--soft faq">
+      <div class="section-heading">
+        <span><i></i> FAQ</span>
+        <h2>Perguntas sobre este serviço</h2>
+      </div>
+      <div class="faq-list">
+        @for (faq of service.faqs; track faq.question; let index = $index) {
+          <article [class.open]="faqAberta === index">
+            <button type="button" (click)="alternarFaq(index)" [attr.aria-expanded]="faqAberta === index">
+              {{ faq.question }} <i class="pi pi-angle-down"></i>
+            </button>
+            @if (faqAberta === index) {
+              <p>{{ faq.answer }}</p>
+            }
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="cta">
+      <span>PRONTO PARA COMEÇAR?</span>
+      <h2>Vamos transformar seu desafio em resultado.</h2>
+      <a routerLink="/contato">Falar com um especialista <i class="pi pi-arrow-right"></i></a>
+    </section>
+  </main>
+</div>
